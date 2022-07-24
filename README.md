@@ -11,3 +11,4 @@
 - lint-staged
 - prettier
 - husky
+- commitlint
