@@ -8,3 +8,6 @@
 - typescript
 - eslint
 - prettier
+- lint-staged
+- prettier
+- husky
