@@ -39,7 +39,7 @@ To understand more deeply the meaning of each commit type, please refer to the d
 
 ## 3 Merge Request
 
-If you want to merge new code within the `ti` branch you need to open a new `Merge Request` at gitlab.
+If you want to merge new code within the `development` branch you need to open a new `Merge Request` at gitlab.
 
 It's very important to keep each change in individual commits to its original branch/pull request, and add a clear and meaningful title to each merge request.
 
