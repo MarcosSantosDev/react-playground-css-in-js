@@ -35,7 +35,7 @@ To start the project, follow these steps:
 Clone the project:
 
 ```
-git clone https://github.com/MarcosSantosDev/react-playground.git
+git clone https://github.com/MarcosSantosDev/react-playground-css-in-js.git
 ```
 
 Install the dependencies
