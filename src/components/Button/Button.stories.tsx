@@ -1,11 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { AppThemeProvider } from '../../../../styles/AppThemeProvider';
-import { Button, buttonSize } from './Button';
+import { AppThemeProvider } from '@/styles/AppThemeProvider';
+
+import { Button } from './Button';
 import type { ButtonProps } from './Button';
 
 export default {
-  title: 'Components/Structure/Button',
+  title: 'components/Button',
   component: Button,
   decorators: [
     Story => {
@@ -13,8 +14,8 @@ export default {
     },
   ],
   args: {
-    variation: 'primary',
-    size: 'small',
+    variant: 'primary',
+    size: 'md',
   },
   argTypes: {
     children: {
@@ -22,7 +23,7 @@ export default {
       description: 'Property to add label',
       defaultValue: 'Click me!',
     },
-    variation: {
+    variant: {
       type: 'string',
       defaultValue: 'primary',
       description: 'Property to control button variation',
@@ -34,25 +35,12 @@ export default {
       defaultValue: 'small',
       description: 'Property to control size button',
       control: 'inline-radio',
-      options: Object.keys(buttonSize),
+      options: ['sm', 'md', 'lg'],
+    },
+    disabled: {
+      control: 'boolean',
     },
   },
 } as Meta<ButtonProps>;
 
-export const Small: StoryObj<ButtonProps> = {
-  args: {
-    size: 'small',
-  },
-};
-
-export const Medium: StoryObj<ButtonProps> = {
-  args: {
-    size: 'medium',
-  },
-};
-
-export const Large: StoryObj<ButtonProps> = {
-  args: {
-    size: 'large',
-  },
-};
+export const Default: StoryObj<ButtonProps> = {};

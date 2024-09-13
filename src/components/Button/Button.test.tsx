@@ -22,7 +22,7 @@ const renderWithTheme = (
 describe('<Button />', () => {
   it('should contains in the document', () => {
     renderWithTheme(
-      <Button type="button" variation="primary" data-testid="button-test">
+      <Button type="button" variant="primary" data-testid="button-test">
         Click me!
       </Button>,
     );
@@ -38,7 +38,7 @@ describe('<Button />', () => {
     renderWithTheme(
       <Button
         type="button"
-        variation="primary"
+        variant="primary"
         data-testid="button-test"
         onClick={handleClick}
       >
