@@ -5,7 +5,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   name: string;
 };
 
-const Input = ({ label, type, id, name, ...inputProps }: InputProps) => {
+export const Input = ({ label, type, id, name, ...inputProps }: InputProps) => {
   return (
     <S.InputContainer>
       <S.Label htmlFor={id || name} aria-labelledby={id || name}>
@@ -15,5 +15,3 @@ const Input = ({ label, type, id, name, ...inputProps }: InputProps) => {
     </S.InputContainer>
   );
 };
-
-export default Input;

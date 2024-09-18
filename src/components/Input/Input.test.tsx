@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithTheme } from '@/utils/RTL';
 
-import Input from './Input';
+import { Input } from './Input';
 
 describe('Input Component', () => {
   it('should render the label and input correctly', () => {

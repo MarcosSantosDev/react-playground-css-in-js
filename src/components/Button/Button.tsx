@@ -1,4 +1,5 @@
-import Icon, { IconNames } from '../Icon';
+import { Icon } from '../Icon/Icon';
+import type { IconNames } from '../Icon/Icon';
 import * as S from './Button.styled';
 import type { ButtonStyledProps } from './Button.styled';
 

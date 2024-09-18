@@ -1,5 +1,4 @@
-import Icon from '@/components/Icon';
-import { IconButton } from '@/components/IconButton';
+import { Icon, IconButton } from '@/components';
 import { useAuthState } from '@/features/routes/hooks/useAuthState';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 

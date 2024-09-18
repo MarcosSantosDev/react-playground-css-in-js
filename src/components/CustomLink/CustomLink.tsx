@@ -6,12 +6,10 @@ type CustomLinkProps = {
   className?: string;
 };
 
-const CustomLink = ({ to, children, className }: CustomLinkProps) => {
+export const CustomLink = ({ to, children, className }: CustomLinkProps) => {
   return (
     <S.StyledLink to={to} className={className}>
       {children}
     </S.StyledLink>
   );
 };
-
-export default CustomLink;

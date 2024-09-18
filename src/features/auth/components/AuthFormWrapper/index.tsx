@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CustomLink from '@/components/CustomLink';
+import { CustomLink } from '@/components';
 
 import OAuth from '../OAuth';
 import * as S from './AuthFormWrapper.styles';

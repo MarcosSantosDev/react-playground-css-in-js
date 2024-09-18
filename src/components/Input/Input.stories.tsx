@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
-import Input, { InputProps } from './Input';
+import { Input, InputProps } from './Input';
 
 export default {
   title: 'components/Input',

@@ -1,5 +1,4 @@
-import { Button } from '@/components';
-import Input from '@/components/Input/Input';
+import { Button, Input } from '@/components';
 import AuthFormWrapper from '@/features/auth/components/AuthFormWrapper';
 import { useAuthState } from '@/features/routes/hooks/useAuthState';
 import { useFormSubmit } from '@/hooks/useFormSubmit';

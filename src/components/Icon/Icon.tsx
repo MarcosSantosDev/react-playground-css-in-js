@@ -16,7 +16,7 @@ type IconProps = Omit<LucideProps, 'ref'> & {
   name: IconNames;
 };
 
-const Icon = ({ name, ...props }: IconProps) => {
+export const Icon = ({ name, ...props }: IconProps) => {
   const iconSvgName = name as IconSVGNames;
 
   if (iconsSvg?.[iconSvgName]) {
@@ -38,5 +38,3 @@ const Icon = ({ name, ...props }: IconProps) => {
     </React.Suspense>
   );
 };
-
-export default Icon;
