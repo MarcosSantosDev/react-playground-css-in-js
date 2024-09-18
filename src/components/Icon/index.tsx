@@ -28,9 +28,9 @@ const Icon = ({ name, ...props }: IconProps) => {
     );
   }
 
-  const lucidIconName = name as LucideIconNames;
+  const lucideIconName = name as LucideIconNames;
 
-  const LucideIcon = React.lazy(dynamicIconImports[lucidIconName]);
+  const LucideIcon = React.lazy(dynamicIconImports[lucideIconName]);
 
   return (
     <React.Suspense fallback={fallback}>
