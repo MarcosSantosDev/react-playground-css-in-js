@@ -2,27 +2,36 @@ import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: '#1F41BB',
-    secondary: '#FFFFFF',
-    accent: '#CDCDCD',
-    background: '#FFFFFF',
+    primary: '#605BFF',
+    secondary: '#CDCDCD',
+    background: '#FDFDFD',
     surface: '#F1F4FF',
+    scrollbarTrack: '#f1f1f1', // Cor de fundo do track da scrollbar
+    scrollbarThumb: '#888', // Cor do thumb da scrollbar
+    scrollbarThumbHover: '#555', // Cor do thumb ao passar o mouse
     text: {
       primary: '#212121',
-      secondary: '#626262',
-      link: '#007bff',
+      secondary: '#FFFFFF',
+      tertiary: '#030229',
       disabled: '#BDBDBD',
-      contrast: '#FFFFFF',
+      link: '#007bff',
     },
-    border: '#1F41BB',
+    button: {
+      primary: '#605BFF',
+      secondary: '#FDFDFD',
+      disabled: '#BDBDBD',
+    },
+    border: {
+      primary: '#605BFF',
+      secondary: '#CDCDCD',
+      disabled: '#F1F4FF',
+    },
     error: '#D32F2F',
     success: '#388E3C',
     warning: '#FBC02D',
   },
   fonts: {
-    primary: "'Roboto', sans-serif",
-    secondary: "'Montserrat', sans-serif",
-    headings: "'Poppins', sans-serif",
+    primary: "'Nunito', sans-serif",
   },
   fontSizes: {
     xs: '10px',
@@ -54,6 +63,10 @@ export const theme: DefaultTheme = {
     md: '0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)',
     lg: '0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23)',
     xl: '0px 14px 28px rgba(0, 0, 0, 0.25), 0px 10px 10px rgba(0, 0, 0, 0.22)',
+  },
+  gradient: {
+    primary:
+      'linear-gradient(90deg, rgba(96, 91, 255, 0.1) 0%, rgba(241, 244, 255, 0.3) 20%)',
   },
   breakpoints: {
     xs: '480px',

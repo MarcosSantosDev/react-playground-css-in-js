@@ -1,29 +1,33 @@
-// Button.tsx
+import * as React from 'react';
+
 import styled from 'styled-components';
 
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary' | 'outlined';
-  size?: 'sm' | 'md' | 'lg';
-};
+export type ButtonStyledProps =
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    align?: 'left' | 'center' | 'right' | 'space-between';
+    variant?: 'primary' | 'secondary';
+    size?: 'sm' | 'md' | 'lg';
+  };
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonStyledProps>`
+  display: inline-flex;
+  align-items: center;
+  justify-content: ${props => props?.align};
+  gap: ${({ theme }) => theme.spacing.md};
   background-color: ${({ theme, variant }) => {
     switch (variant) {
       case 'secondary':
-        return theme.colors['secondary'];
-      case 'outlined':
-        return theme.colors['background'];
+        return theme.colors.button.secondary;
       default:
-        return theme.colors['primary'];
+        return theme.colors.button.primary;
     }
   }};
   color: ${({ theme, variant }) => {
     switch (variant) {
       case 'secondary':
-      case 'outlined':
-        return theme.colors.text['secondary'];
+        return theme.colors.text.primary;
       default:
-        return theme.colors.text['contrast'];
+        return theme.colors.text.secondary;
     }
   }};
   font-size: ${({ theme, size }) => {
@@ -48,8 +52,8 @@ export const Button = styled.button<ButtonProps>`
   }};
   border: ${({ theme, variant }) => {
     switch (variant) {
-      case 'outlined':
-        return `1px solid ${theme.colors.accent}`;
+      case 'secondary':
+        return `1px solid ${theme.colors.border.secondary}`;
       default:
         return 'none';
     }
@@ -61,7 +65,7 @@ export const Button = styled.button<ButtonProps>`
   &:hover {
     filter: opacity(0.8);
     border-color: ${({ theme, variant }) => {
-      if (variant === 'outlined') {
+      if (variant === 'secondary') {
         return theme.colors.border;
       }
     }};
@@ -69,6 +73,11 @@ export const Button = styled.button<ButtonProps>`
 
   &:disabled {
     background-color: ${({ theme }) => theme.colors.text.disabled};
+    border: ${({ theme }) => `1px solid ${theme.colors.border.secondary}`};
     cursor: not-allowed;
   }
+`;
+
+export const ButtonChildren = styled.span`
+  font-size: inherit;
 `;

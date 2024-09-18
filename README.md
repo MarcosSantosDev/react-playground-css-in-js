@@ -16,6 +16,7 @@ The main technologies used to develop the project were:
 - [Jest](https://jestjs.io/) - Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 - [husky(v8)](https://typicode.github.io/husky) - Helps improve commits. You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push.
 - [storybook](https://storybook.js.org/) - Storybook is a frontend workshop for building UI components and pages in isolation.
+- [lucide-react](https://lucide.dev/) - Beautiful & consistent icons. Made by the community.
 
 This project was bootstrapped with:
 

@@ -1,4 +1,5 @@
 import { Button } from '@/components';
+
 import * as S from './OAuth.styles';
 
 const OAuth = () => {
@@ -18,8 +19,26 @@ const OAuth = () => {
         <S.Line />
       </S.ConditionWrapper>
       <S.OAuthWrapper>
-        <Button variant="outlined">Continue with Google</Button>
-        <Button variant="outlined">Continue with Apple</Button>
+        <Button
+          variant="secondary"
+          onClick={onGoogleLogin}
+          icon={{
+            align: 'left',
+            name: 'g-google',
+          }}
+        >
+          Continue with Google
+        </Button>
+        <Button
+          variant="secondary"
+          onClick={onAppleLogin}
+          icon={{
+            align: 'left',
+            name: 'apple',
+          }}
+        >
+          Continue with Apple
+        </Button>
       </S.OAuthWrapper>
     </S.Container>
   );

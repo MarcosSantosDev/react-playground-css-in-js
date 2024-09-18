@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
 type SidebarProps = {
-  isOpen: boolean;
+  panelIsOpened: boolean;
 };
 
 type MainContentProps = {
-  isSidebarOpen: boolean;
+  panelIsOpened: boolean;
 };
+
+const SIDEBAR_WIDTH_OPENED = 250;
+const SIDEBAR_WIDTH_CLOSED = 68;
 
 export const Container = styled.div`
   display: flex;
@@ -16,19 +19,33 @@ export const Container = styled.div`
 `;
 
 export const SidebarWrapper = styled.div<SidebarProps>`
-  width: ${({ isOpen }) => (isOpen ? '250px' : '0')};
-  transition: width 0.3s ease;
+  width: ${({ panelIsOpened }) =>
+    panelIsOpened ? `${SIDEBAR_WIDTH_OPENED}px` : `${SIDEBAR_WIDTH_CLOSED}px`};
+  transition: width 0.3s ease, background-color 0.3s ease;
   overflow: hidden;
+  box-shadow: ${({ theme }) => theme.shadows.sm};
+
+  @media (max-width: 768px) {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+  }
 `;
 
 export const MainContent = styled.div<MainContentProps>`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  width: ${({ isSidebarOpen }) =>
-    isSidebarOpen ? 'calc(100vw - 250px)' : '100vw'};
+  width: ${({ panelIsOpened }) =>
+    `calc(100vw - ${
+      panelIsOpened ? SIDEBAR_WIDTH_OPENED : SIDEBAR_WIDTH_CLOSED
+    }px)`};
   transition: width 0.3s ease;
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 export const navbarMaxHeight = 64;
@@ -38,12 +55,19 @@ export const NavbarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  padding: ${({ theme }) => theme.spacing.lg};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border.primary};
+
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
 `;
 
 export const ContentArea = styled.div`
-  padding: 20px;
+  padding: ${({ theme }) => theme.spacing.xl};
   flex-grow: 1;
-  background-color: #f5f5f5;
+
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.spacing.lg};
+  }
 `;

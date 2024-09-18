@@ -5,25 +5,34 @@ declare module 'styled-components' {
     colors: {
       primary: string;
       secondary: string;
-      accent: string;
       background: string;
       surface: string;
+      scrollbarTrack: string;
+      scrollbarThumb: string;
+      scrollbarThumbHover: string;
       text: {
         primary: string;
         secondary: string;
+        tertiary: string;
         link: string;
         disabled: string;
-        contrast: string;
       };
-      border: string;
+      button: {
+        primary: string;
+        secondary: string;
+        disabled: string;
+      };
+      border: {
+        primary: string;
+        secondary: string;
+        disabled: string;
+      };
       error: string;
       success: string;
       warning: string;
     };
     fonts: {
       primary: string;
-      secondary: string;
-      headings: string;
     };
     fontSizes: {
       xs: string;
@@ -55,6 +64,9 @@ declare module 'styled-components' {
       md: string;
       lg: string;
       xl: string;
+    };
+    gradient: {
+      primary: string;
     };
     breakpoints: {
       xs: string;

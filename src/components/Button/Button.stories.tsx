@@ -8,20 +8,29 @@ import type { ButtonProps } from './Button';
 export default {
   title: 'components/Button',
   component: Button,
-  decorators: [
-    Story => {
-      return <AppThemeProvider>{Story()}</AppThemeProvider>;
-    },
-  ],
+  decorators: [Story => <AppThemeProvider>{Story()}</AppThemeProvider>],
   args: {
     variant: 'primary',
     size: 'md',
+    align: 'left',
+    icon: {
+      name: 'inbox',
+      align: 'left',
+    },
+    disabled: false,
   },
   argTypes: {
     children: {
       type: 'string',
       description: 'Property to add label',
       defaultValue: 'Click me!',
+    },
+    align: {
+      type: 'string',
+      defaultValue: 'left',
+      description: 'Property to control size button',
+      control: 'inline-radio',
+      options: ['left', 'center', 'right', 'space-between'],
     },
     variant: {
       type: 'string',
@@ -32,10 +41,19 @@ export default {
     },
     size: {
       type: 'string',
-      defaultValue: 'small',
+      defaultValue: 'sm',
       description: 'Property to control size button',
       control: 'inline-radio',
       options: ['sm', 'md', 'lg'],
+    },
+    icon: {
+      description:
+        'Property to add icon on button: align: left or right, name: inbox',
+      control: 'object',
+      options: {
+        name: 'inbox',
+        align: 'left',
+      },
     },
     disabled: {
       control: 'boolean',

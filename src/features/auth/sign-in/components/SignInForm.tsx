@@ -1,9 +1,10 @@
 import { Button } from '@/components';
-import Input from '@/components/Input';
+import Input from '@/components/Input/Input';
+import AuthFormWrapper from '@/features/auth/components/AuthFormWrapper';
+import { useAuthState } from '@/features/routes/hooks/useAuthState';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import routePaths from '@/router/routePaths';
 
-import AuthFormWrapper from '../../components/AuthFormWrapper';
 import * as S from './SignInForm.styles';
 
 type SignInFormData = {
@@ -12,9 +13,15 @@ type SignInFormData = {
 };
 
 const SignInForm = () => {
+  const { login } = useAuthState();
+
   const handleSubmit = useFormSubmit(data => {
     const formData = data as SignInFormData;
-    // console.log(formData);
+    login({
+      id: '1',
+      name: 'Ghost',
+      email: formData.email,
+    });
   });
 
   return (
@@ -41,7 +48,7 @@ const SignInForm = () => {
             name="password"
           />
         </S.FieldsGroup>
-        <Button type="submit" size="md">
+        <Button type="submit" size="md" align="center">
           Sign In
         </Button>
       </S.Form>

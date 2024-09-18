@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   max-width: 400px;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.borderRadius.md};
 
   display: grid;
   grid-template-columns: auto;
@@ -31,7 +31,7 @@ export const HeaderContentSubTitle = styled.div`
 `;
 
 export const HeaderDescription = styled.p`
-  color: ${({ theme }) => theme.colors.text.secondary};
+  color: ${({ theme }) => theme.colors.text.primary};
   font-size: inherit;
 `;
 

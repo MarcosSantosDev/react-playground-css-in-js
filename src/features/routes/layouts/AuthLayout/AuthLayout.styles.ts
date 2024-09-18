@@ -13,6 +13,19 @@ export const ContentColumn = styled.div`
   align-items: center;
 `;
 
+export const ContentLogoImg = styled.div`
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  flex-direction: column;
+  background: ${({ theme }) => theme.colors.surface};
+
+  > img {
+    width: 80%;
+  }
+`;
+
 interface ImageColumnProps {
   imageSrc: string;
 }

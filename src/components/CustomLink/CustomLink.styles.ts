@@ -6,9 +6,9 @@ export const StyledLink = styled(RouterLink)`
   color: ${({ theme }) => theme.colors.text.link};
   font-size: inherit;
   font-weight: normal;
-  padding: 0px;
+  padding: 0;
   border: 2px solid transparent;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
   transition: all 0.3s ease;
 
   &:hover {

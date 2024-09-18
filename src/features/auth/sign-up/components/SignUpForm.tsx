@@ -1,5 +1,5 @@
 import { Button } from '@/components';
-import Input from '@/components/Input';
+import Input from '@/components/Input/Input';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import routePaths from '@/router/routePaths';
 
