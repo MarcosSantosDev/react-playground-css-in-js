@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Icon } from '@/components';
 import type { IconNames } from '@/components/Icon/Icon';
 
-import * as S from './Menu.styled';
+import * as S from './MenuItem.styled';
 
 type MenuItemProps = {
   path: string;

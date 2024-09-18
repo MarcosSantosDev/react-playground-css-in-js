@@ -6,6 +6,6 @@ type PanelState = {
 };
 
 export const usePanelState = create<PanelState>(set => ({
-  panelIsOpened: false,
+  panelIsOpened: true,
   togglePanel: () => set(state => ({ panelIsOpened: !state.panelIsOpened })),
 }));

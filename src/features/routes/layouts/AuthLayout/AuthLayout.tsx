@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 
-import { useAuthState } from '@/features/routes/hooks/useAuthState';
+import { useAuthState } from '@/features/routes/hooks';
 import routePaths from '@/router/routePaths';
 
 import * as S from './AuthLayout.styles';

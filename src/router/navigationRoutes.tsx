@@ -1,8 +1,7 @@
 import SignInForm from '@/features/auth/sign-in/components/SignInForm';
 import SignUpForm from '@/features/auth/sign-up/components/SignUpForm';
-import NotFound from '@/features/routes/components/NotFound';
-import AppAuthLayout from '@/features/routes/layouts/AppLayout';
-import AuthLayout from '@/features/routes/layouts/AuthLayout';
+import { NotFound } from '@/features/routes/components';
+import { AuthLayout, AppLayout } from '@/features/routes/layouts';
 
 import routePaths from './routePaths';
 import { RouteObject, AppNavigationRouteObject } from './types';
@@ -33,7 +32,7 @@ export const privateRoutes: AppNavigationRouteObject[] = [
     errorElement: <NotFound />,
     id: 'ROOT',
     path: routePaths.ROOT,
-    element: <AppAuthLayout redirectTo="/sign-in" />,
+    element: <AppLayout redirectTo="/sign-in" />,
     children: [
       {
         id: 'ROOT_INDEX',

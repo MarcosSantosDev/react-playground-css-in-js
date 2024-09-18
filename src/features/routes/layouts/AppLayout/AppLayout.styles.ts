@@ -24,12 +24,6 @@ export const SidebarWrapper = styled.div<SidebarProps>`
   transition: width 0.3s ease, background-color 0.3s ease;
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.shadows.sm};
-
-  @media (max-width: 768px) {
-    position: absolute;
-    z-index: 10;
-    height: 100%;
-  }
 `;
 
 export const MainContent = styled.div<MainContentProps>`
@@ -57,17 +51,9 @@ export const NavbarWrapper = styled.div`
   align-items: center;
   padding: ${({ theme }) => theme.spacing.lg};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border.primary};
-
-  @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.spacing.sm};
-  }
 `;
 
 export const ContentArea = styled.div`
   padding: ${({ theme }) => theme.spacing.xl};
   flex-grow: 1;
-
-  @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.spacing.lg};
-  }
 `;

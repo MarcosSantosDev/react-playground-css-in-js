@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-import Sidebar from '@/features/routes/components/Sidebar';
+import { Sidebar } from '@/features/routes/components';
 import { useAuthState } from '@/features/routes/hooks/useAuthState';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 

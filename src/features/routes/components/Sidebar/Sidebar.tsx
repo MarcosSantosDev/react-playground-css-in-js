@@ -2,11 +2,11 @@ import { Icon, IconButton } from '@/components';
 import { useAuthState } from '@/features/routes/hooks/useAuthState';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 
-import Menu from './Menu';
+import Menu from './Menu/Menu';
 import * as S from './Sidebar.styled';
-import User from './User';
+import User from './User/User';
 
-const Sidebar = () => {
+function Sidebar() {
   const { logout } = useAuthState();
   const { panelIsOpened, togglePanel } = usePanelState();
 
@@ -36,6 +36,6 @@ const Sidebar = () => {
       </S.Footer>
     </S.Container>
   );
-};
+}
 
 export default Sidebar;
