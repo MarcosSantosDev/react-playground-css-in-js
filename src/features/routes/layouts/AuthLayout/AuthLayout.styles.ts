@@ -14,7 +14,7 @@ export const ContentColumn = styled.div`
 `;
 
 export const ContentLogoImg = styled.div`
-  max-width: 50%;
+  flex: 1;
   display: flex;
   justify-content: center;
   place-items: center;
