@@ -1,26 +1,12 @@
-import * as React from 'react';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import {
-  render,
-  screen,
-  fireEvent,
-  RenderOptions,
-} from '@testing-library/react';
-
-import { AppThemeProvider } from '@/styles/AppThemeProvider';
+import { renderWithTheme } from '@/utils/RTL';
 
 import { Button } from './Button';
 
-const renderWithTheme = (
-  ui: React.ReactNode,
-  options?: Omit<RenderOptions, 'queries'>,
-) => {
-  return render(<AppThemeProvider>{ui}</AppThemeProvider>, options);
-};
-
-// adicionar contexto de tema da aplicação para funcionar
-describe('<Button />', () => {
-  it('should contains in the document', () => {
+describe('Button Component', () => {
+  it('should be in the document', () => {
     renderWithTheme(
       <Button type="button" variant="primary" data-testid="button-test">
         Click me!
@@ -32,7 +18,7 @@ describe('<Button />', () => {
     expect(element).toBeInTheDocument();
   });
 
-  it('should contain the specified value', () => {
+  it('should call onClick function when clicked', async () => {
     const handleClick = jest.fn();
 
     renderWithTheme(
@@ -47,8 +33,7 @@ describe('<Button />', () => {
     );
 
     const buttonElement = screen.getByTestId<HTMLButtonElement>('button-test');
-
-    fireEvent.click(buttonElement);
+    userEvent.click(buttonElement);
 
     expect(handleClick).toHaveBeenCalled();
     expect(handleClick).toHaveBeenCalledTimes(1);
