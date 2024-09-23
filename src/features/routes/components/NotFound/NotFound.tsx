@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components';
-import routePaths from '@/router/routePaths';
+import paths from '@/router/config/paths';
 
 import * as S from './NotFound.styled';
 
@@ -9,7 +9,7 @@ const NotFoundPage = () => {
   const navigate = useNavigate();
 
   const handleGoToHomePage = () => {
-    navigate(routePaths.ROOT);
+    navigate(paths.ROOT);
   };
 
   return (

@@ -16,16 +16,18 @@ function AppAuthLayout({ redirectTo }: AppAuthLayoutProps) {
 
   if (isAuthenticated) {
     return (
-      <S.Container>
-        <S.SidebarWrapper panelIsOpened={panelIsOpened}>
-          <Sidebar />
-        </S.SidebarWrapper>
-        <S.MainContent panelIsOpened={panelIsOpened}>
-          <S.ContentArea>
-            <Outlet />
-          </S.ContentArea>
-        </S.MainContent>
-      </S.Container>
+      <>
+        <S.Container>
+          <S.SidebarWrapper panelIsOpened={panelIsOpened}>
+            <Sidebar />
+          </S.SidebarWrapper>
+          <S.MainContent panelIsOpened={panelIsOpened}>
+            <S.ContentArea>
+              <Outlet />
+            </S.ContentArea>
+          </S.MainContent>
+        </S.Container>
+      </>
     );
   }
 

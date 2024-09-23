@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from 'react-router-dom';
 
 import { useAuthState } from '@/features/routes/hooks';
-import routePaths from '@/router/routePaths';
+import paths from '@/router/config/paths';
 
 import * as S from './AuthLayout.styles';
 
@@ -17,7 +17,7 @@ const AuthLayout = ({ children, redirectTo }: AuthLayoutProps) => {
   const { isAuthenticated } = useAuthState();
   const location = useLocation();
 
-  const isSignInPage = location.pathname === routePaths.ROOT_SIGN_IN;
+  const isSignInPage = location.pathname === paths.ROOT_SIGN_IN;
 
   if (isAuthenticated) {
     return <Navigate to={redirectTo} />;

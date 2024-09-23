@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 
+import { useSidebarNavigationRoutes } from '@/features/routes/hooks/useSidebarNavigationRoutes';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
-import { appNavigationRoutesMap } from '@/router/routesConfig';
 
 import * as S from './Menu.styled';
 import MenuItem from './MenuItem';
@@ -9,6 +9,7 @@ import MenuItem from './MenuItem';
 const Menu = () => {
   const location = useLocation();
   const { panelIsOpened } = usePanelState();
+  const sidebarNavigationRoutes = useSidebarNavigationRoutes();
 
   const itemActive = (pathName: string) => {
     return pathName === location.pathname;
@@ -17,7 +18,7 @@ const Menu = () => {
   return (
     <S.Container>
       <S.MenuGroupItem>
-        {appNavigationRoutesMap.map(route => (
+        {sidebarNavigationRoutes.map(route => (
           <MenuItem
             key={route.id}
             path={route.path ?? ''}
