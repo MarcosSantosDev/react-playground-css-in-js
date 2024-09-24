@@ -12,7 +12,7 @@ export const routes: RouteObject[] = [
     id: 'ROOT_SIGN_IN',
     path: paths.ROOT_SIGN_IN,
     element: (
-      <AuthLayout redirectTo="/">
+      <AuthLayout>
         <SignInForm />
       </AuthLayout>
     ),
@@ -21,7 +21,7 @@ export const routes: RouteObject[] = [
     id: 'ROOT_SIGN_UP',
     path: paths.ROOT_SIGN_UP,
     element: (
-      <AuthLayout redirectTo="/">
+      <AuthLayout>
         <SignUpForm />
       </AuthLayout>
     ),
@@ -30,7 +30,7 @@ export const routes: RouteObject[] = [
     errorElement: <NotFound />,
     id: 'ROOT',
     path: paths.ROOT,
-    element: <AppLayout redirectTo="/sign-in" />,
+    element: <AppLayout />,
     children: appRoutesConfig,
   },
 ];

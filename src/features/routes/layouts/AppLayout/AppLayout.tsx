@@ -3,14 +3,11 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { Sidebar } from '@/features/routes/components';
 import { useAuthState } from '@/features/routes/hooks/useAuthState';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
+import paths from '@/router/config/paths';
 
 import * as S from './AppLayout.styles';
 
-type AppAuthLayoutProps = {
-  redirectTo: string;
-};
-
-function AppAuthLayout({ redirectTo }: AppAuthLayoutProps) {
+function AppAuthLayout() {
   const { isAuthenticated } = useAuthState();
   const { panelIsOpened } = usePanelState();
 
@@ -31,7 +28,7 @@ function AppAuthLayout({ redirectTo }: AppAuthLayoutProps) {
     );
   }
 
-  return <Navigate to={redirectTo} />;
+  return <Navigate to={paths.ROOT_SIGN_IN} />;
 }
 
 export default AppAuthLayout;

@@ -10,17 +10,16 @@ import authBgLogoSignUp from '/assets/auth/sign-up.svg';
 
 interface AuthLayoutProps {
   children: React.ReactNode;
-  redirectTo: string;
 }
 
-const AuthLayout = ({ children, redirectTo }: AuthLayoutProps) => {
+const AuthLayout = ({ children }: AuthLayoutProps) => {
   const { isAuthenticated } = useAuthState();
   const location = useLocation();
 
   const isSignInPage = location.pathname === paths.ROOT_SIGN_IN;
 
   if (isAuthenticated) {
-    return <Navigate to={redirectTo} />;
+    return <Navigate to={paths.ROOT} />;
   }
 
   return (
