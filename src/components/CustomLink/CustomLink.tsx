@@ -8,8 +8,8 @@ type CustomLinkProps = {
 
 export const CustomLink = ({ to, children, className }: CustomLinkProps) => {
   return (
-    <S.StyledLink to={to} className={className}>
+    <S.CustomLink to={to} className={className}>
       {children}
-    </S.StyledLink>
+    </S.CustomLink>
   );
 };

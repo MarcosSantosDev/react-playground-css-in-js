@@ -2,13 +2,20 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
+import StoryWrapper from '../StoryWrapper/StoryWrapper';
 import { Button } from './Button';
 import type { ButtonProps } from './Button';
 
 export default {
   title: 'components/Button',
   component: Button,
-  decorators: [Story => <AppThemeProvider>{Story()}</AppThemeProvider>],
+  decorators: [
+    Story => (
+      <AppThemeProvider>
+        <StoryWrapper>{Story()}</StoryWrapper>
+      </AppThemeProvider>
+    ),
+  ],
   args: {
     variant: 'primary',
     size: 'md',

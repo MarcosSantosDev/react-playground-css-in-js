@@ -1,6 +1,25 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-end;
+  padding: ${({ theme }) => theme.spacing.md} 0px;
+  border-top: 1px solid ${({ theme }) => theme.colors.border.secondary};
+`;
+
+type FooterContentStyledProps = {
+  panelIsOpened: boolean;
+};
+
+export const FooterContent = styled.div<FooterContentStyledProps>`
+  display: flex;
+  flex-direction: ${({ panelIsOpened }) => (panelIsOpened ? 'row' : 'column')};
+  justify-content: space-between;
+  gap: ${({ theme }) => theme.spacing.lg};
+`;
+
+export const UserContainer = styled.div`
   display: flex;
   height: 44px;
   gap: ${({ theme }) => theme.spacing.lg};

@@ -20,9 +20,9 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <S.Button {...buttonProps} align={align}>
-      {icon && icon.align === 'left' && <Icon name={icon.name} size={20} />}
+      {icon && icon.align === 'left' && <Icon name={icon.name} size={14} />}
       <S.ButtonChildren>{children}</S.ButtonChildren>
-      {icon && icon.align === 'right' && <Icon name={icon.name} size={20} />}
+      {icon && icon.align === 'right' && <Icon name={icon.name} size={14} />}
     </S.Button>
   );
 };

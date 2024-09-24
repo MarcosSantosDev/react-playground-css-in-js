@@ -2,12 +2,19 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
+import StoryWrapper from '../StoryWrapper/StoryWrapper';
 import { Input, InputProps } from './Input';
 
 export default {
   title: 'components/Input',
   component: Input,
-  decorators: [Story => <AppThemeProvider>{Story()}</AppThemeProvider>],
+  decorators: [
+    Story => (
+      <AppThemeProvider>
+        <StoryWrapper>{Story()}</StoryWrapper>
+      </AppThemeProvider>
+    ),
+  ],
   args: {
     label: 'Username',
     name: 'username',

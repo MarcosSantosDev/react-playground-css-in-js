@@ -11,15 +11,18 @@ describe('Input Component', () => {
 
     const inputLabel = screen.getByText('Username');
     const inputElement = screen.getByRole('textbox');
+
     expect(inputLabel).toBeInTheDocument();
     expect(inputElement).toHaveAttribute('name', 'username');
   });
 
-  it('should accept text input', async () => {
+  it('should accept text input', () => {
     renderWithTheme(<Input label="Username" name="username" type="text" />);
 
     const inputElement = screen.getByRole('textbox');
-    await userEvent.type(inputElement, 'john_doe');
+
+    userEvent.type(inputElement, 'john_doe');
+
     expect(inputElement).toHaveValue('john_doe');
   });
 
@@ -27,6 +30,7 @@ describe('Input Component', () => {
     renderWithTheme(<Input label="Email" name="email" type="email" />);
 
     const inputElement = screen.getByRole('textbox');
+
     expect(inputElement).toHaveAttribute('type', 'email');
   });
 
@@ -36,6 +40,7 @@ describe('Input Component', () => {
     );
 
     const inputElement = screen.getByLabelText('Password');
+
     expect(inputElement).toBeRequired();
   });
 });

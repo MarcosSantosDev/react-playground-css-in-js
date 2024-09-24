@@ -1,0 +1,36 @@
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import paths from '@/router/config/paths';
+import { renderWithThemeAndBrowserRouter } from '@/utils/RTL';
+
+import Sidebar from './Sidebar';
+
+const mockNavigate = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockNavigate,
+}));
+
+describe('Sidebar component', () => {
+  it('should render correctly', async () => {
+    // arrange
+    await renderWithThemeAndBrowserRouter(<Sidebar />);
+    // assert
+    const navElement = screen.getByText('Dashboard');
+    expect(navElement).toBeInTheDocument();
+  });
+
+  it('should be call navigate when click the nav item "Dashboard"', async () => {
+    // arrange
+    await renderWithThemeAndBrowserRouter(<Sidebar />);
+    // act
+    const navElement = screen.getByText('Dashboard');
+    userEvent.click(navElement);
+    // assert
+    expect(mockNavigate).toHaveBeenCalled();
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith(paths.ROOT_INDEX);
+  });
+});

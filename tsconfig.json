@@ -15,16 +15,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "rootDirs": ["src", "__tests__"],
+    "rootDirs": ["."],
     "baseUrl": ".",
     "incremental": false,
     "paths": {
       "@/*": ["src/*"],
-      "@/tests/*": ["__tests__/*"]
     }
   },
   "include": ["src", "./src/styles/styled-components.d.ts"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "*.test.tsx"],
   "references": [{
     "path": "./tsconfig.node.json"
   }]

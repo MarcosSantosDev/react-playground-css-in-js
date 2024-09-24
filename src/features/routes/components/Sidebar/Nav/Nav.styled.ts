@@ -1,10 +1,26 @@
 import styled from 'styled-components';
 
-type MenuItemStyledProps = {
+export const NavContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: auto;
+`;
+
+export const NavGroup = styled.ul`
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  gap: ${({ theme }) => theme.spacing.md};
+`;
+
+type NavItemStyledProps = {
   hiddenItem: boolean;
 };
 
-export const MenuItem = styled.li<MenuItemStyledProps>`
+export const NavItem = styled.li<NavItemStyledProps>`
   width: ${({ hiddenItem }) => (hiddenItem ? 'fit-content' : '100%')};
   display: grid;
   grid-template-columns: ${({ hiddenItem }) =>
@@ -30,11 +46,11 @@ export const MenuItem = styled.li<MenuItemStyledProps>`
   }
 `;
 
-type ItemStyledProps = {
+type NavItemLabelStyledProps = {
   hiddenItem: boolean;
 };
 
-export const Item = styled.span<ItemStyledProps>`
+export const NavItemLabel = styled.span<NavItemLabelStyledProps>`
   display: ${({ hiddenItem }) => (hiddenItem ? 'none' : 'normal')};
   font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: 500;

@@ -1,7 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledLink = styled(RouterLink)`
+export const CustomLink = styled(RouterLink)`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.text.link};
   font-size: inherit;

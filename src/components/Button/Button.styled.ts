@@ -50,10 +50,10 @@ export const Button = styled.button<ButtonStyledProps>`
         return `${theme.spacing.md} ${theme.spacing.lg}`;
     }
   }};
-  border: ${({ theme, variant }) => {
+  border: ${({ variant }) => {
     switch (variant) {
       case 'secondary':
-        return `1px solid ${theme.colors.border.secondary}`;
+        return '1px solid transparent';
       default:
         return 'none';
     }
@@ -64,10 +64,8 @@ export const Button = styled.button<ButtonStyledProps>`
 
   &:hover {
     filter: opacity(0.8);
-    border-color: ${({ theme, variant }) => {
-      if (variant === 'secondary') {
-        return theme.colors.border;
-      }
+    border-color: ${({ theme }) => {
+      return theme.colors.border.secondary;
     }};
   }
 
