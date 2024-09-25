@@ -2,7 +2,7 @@ import { Icon, IconButton } from '@/components';
 import { useAuthState } from '@/features/routes/hooks/useAuthState';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 
-import * as S from './Footer.styled';
+import * as S from './Footer.styles';
 
 function Footer() {
   const { logout } = useAuthState();

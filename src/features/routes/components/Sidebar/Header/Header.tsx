@@ -1,7 +1,7 @@
 import { Icon, IconButton } from '@/components';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 
-import * as S from './Header.styled';
+import * as S from './Header.styles';
 
 const Header = () => {
   const { panelIsOpened, togglePanel } = usePanelState();

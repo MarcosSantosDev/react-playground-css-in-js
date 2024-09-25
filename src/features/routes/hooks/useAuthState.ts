@@ -15,7 +15,7 @@ type AuthState = {
 
 export const useAuthState = create<AuthState>(set => ({
   user: null,
-  isAuthenticated: false,
+  isAuthenticated: true,
   login: (user: User) => set({ user, isAuthenticated: true }),
   logout: () => set({ user: null, isAuthenticated: false }),
 }));

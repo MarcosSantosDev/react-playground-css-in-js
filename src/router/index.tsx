@@ -5,5 +5,10 @@ import routes from './config/routes';
 const router = createBrowserRouter(routes);
 
 export const Router = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      fallbackElement={<p>Initial Loading...</p>}
+    />
+  );
 };

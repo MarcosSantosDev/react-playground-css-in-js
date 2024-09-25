@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "rootDirs": ["."],
+    "baseUrl": ".",
+    "incremental": false,
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -15,16 +21,18 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "rootDirs": ["."],
-    "baseUrl": ".",
-    "incremental": false,
-    "paths": {
-      "@/*": ["src/*"],
-    }
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
-  "include": ["src", "./src/styles/styled-components.d.ts"],
-  "exclude": ["node_modules", "*.test.tsx"],
-  "references": [{
-    "path": "./tsconfig.node.json"
-  }]
+  "include": [
+    "vite-env.d.ts",
+    "vite.config.ts",
+    "src",
+    "./src/styles/styled-components.d.ts"
+  ],
+  "exclude": ["node_modules", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

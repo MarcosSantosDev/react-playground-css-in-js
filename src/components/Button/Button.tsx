@@ -1,7 +1,7 @@
 import { Icon } from '../Icon/Icon';
 import type { IconNames } from '../Icon/Icon';
-import * as S from './Button.styled';
-import type { ButtonStyledProps } from './Button.styled';
+import * as S from './Button.styles';
+import type { ButtonStyledProps } from './Button.styles';
 
 type ButtonIconProps = {
   name: IconNames;

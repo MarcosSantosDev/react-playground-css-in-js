@@ -4,7 +4,7 @@ import { Icon } from '@/components';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 import { appRoutesNavigation } from '@/router/config/app.routes';
 
-import * as S from './Nav.styled';
+import * as S from './Nav.styles';
 
 const Nav = () => {
   const location = useLocation();
