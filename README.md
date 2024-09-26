@@ -1,108 +1,86 @@
-# Projeto XPTO
+# React Boilerplate: High-Performance, Scalable Applications
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-orange.svg)](https://github.com/prettier/prettier)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+This boilerplate is designed for developers who need to quickly set up a scalable and high-performance React application. It integrates modern tools like TypeScript, Jest, Vite, and Storybook, aiming to provide an optimized and efficient development environment right out of the box.
 
-## :books: Technologies used
+## Node.js Version
 
-The main technologies used to develop the project were:
+This project is compatible with Node.js versions `>= 20.0.0`. While it may work with older versions, it's recommended to use the latest LTS (Long Term Support) version for optimal performance and compatibility.
 
-- [React](reactjs.org) - A JavaScript library for building user interfaces.
-- [React router dom(v6)](https://reactrouter.com/) - Declarative routing for React apps at any scale.
-- [Typescript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types.
-- [Eslint](https://eslint.org/) - ESLint statically analyzes your code to quickly find problems.
-- [Prettier](https://prettier.io/) - Opinionated code formatter.
-- [Testing Library](https://testing-library.com/) - Simple and complete testing utilities that encourage good testing practices
-- [Jest](https://jestjs.io/) - Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
-- [husky(v8)](https://typicode.github.io/husky) - Helps improve commits. You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push.
-- [storybook](https://storybook.js.org/) - Storybook is a frontend workshop for building UI components and pages in isolation.
-- [lucide-react](https://lucide.dev/) - Beautiful & consistent icons. Made by the community.
+## ☕ Useful Commands
 
-This project was bootstrapped with:
+- **Start the development server**: Launches the app in development mode.
+  ```bash
+    npm run dev
+  ```
+- Build the project: Prepares the app for production by bundling it.
+  ```bash
+    npm run build
+  ```
+- Run tests: Executes the test suite.
+  ```bash
+    npm run test
+  ```
+- Generate test coverage: Provides test coverage reports.
+  ```bash
+    npm run coverage
+  ```
+  
+- Start Storybook: Launches the Storybook environment to develop components in isolation.
+  ```bash
+    npm run storybook
+  ```
+- Build Storybook: Creates a static bundle of the Storybook UI.
+  ```bash
+    npm run build-storybook
+  ```
 
-- [Vite](https://vitejs.dev/) - Next generation frontend tooling. It's fast!
+## :books: Technologies Used
 
-## 💻 Prerequisites
+The project leverages the following technologies:
 
-Before starting, make sure you've met the following requirements:
+- [React](https://reactjs.org/): A JavaScript library for building user interfaces.
+- [React Router DOM](https://reactrouter.com/): Declarative routing for React applications.
+- [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that compiles to plain JavaScript.
+- [Styled Components](https://styled-components.com/): Use tagged template literals to style your React components.
+- [Zustand](https://github.com/pmndrs/zustand): A small, fast, and scalable state management library for React.
+- [Vite](https://vitejs.dev/): A fast build tool and development server for modern web projects.
+- [Axios](https://axios-http.com/): Promise-based HTTP client for the browser and Node.js.
+- [Jest](https://jestjs.io/): A delightful JavaScript testing framework with a focus on simplicity.
+- [Testing Library](https://testing-library.com/): Simple and complete testing utilities for React components.
+- [Storybook](https://storybook.js.org/): Tool for developing UI components in isolation.
+- [MSW (Mock Service Worker)](https://mswjs.io/): API mocking library for testing and development.
+- [Husky](https://typicode.github.io/husky): Git hooks made easy, enabling automation of tasks on Git commits.
+- [ESLint](https://eslint.org/): A static code analysis tool to identify problematic patterns.
+- [Prettier](https://prettier.io/): An opinionated code formatter for consistent code style.
+- [Lucide React](https://lucide.dev/): A collection of beautiful & consistent open-source icons for React.
 
-- node(versions 14.x.x or later)
-- npm(versions 5.x.x or later)
 
-## 🚀 Getting Started
 
-To start the project, follow these steps:
+## 🤝 Contributing
 
-Clone the project:
+Contributions are welcome! To get started:
 
-```
-git clone https://github.com/MarcosSantosDev/react-playground-css-in-js.git
-```
-
-Install the dependencies
-
-```
-npm install
-```
-
-## ☕ Useful commands
-
-To start the application, run:
-
-```
-npm run dev
-```
-
-To start building the application, run:
-
-```
-npm run build
-```
-
-To start testing the application, run:
-
-```
-npm run test
-```
-
-To generate application test coverage, run:
-
-```
-npm run coverage
-```
-
-To start the app storybook, run:
-
-```
-npm run storybook
-```
-
-To start the app storybook build, run:
-
-```
-npm run build-storybook
-```
-
-## 🤝 Contributing to the project
-
-To contribute, follow these steps:
-
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<message_commit>'`
-4. Push to the original branch: `git push origin <project_name> / <local>`
-5. Create the pull request.
-
-Alternatively, see the GitHub documentation at [how to create a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-
-## :warning: Standards adopted in the project
-
-During the construction of the project, some standards were adopted, check the documentation below, before contributing:
-
-- [Git](./docs/git.md)
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+     git checkout -b <branch_name>
+   ```
+3. Make your changes and commit:
+   ```bash
+     git checkout -b <branch_name>
+   ```
+4. Push the changes:
+   ```bash
+     git checkout -b <branch_name>
+   ```
+5. Open a pull request.
+  For more detailed instructions, check the [GitHub guide on pull requests](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 ## :page_facing_up: License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License. For more information, see the [LICENSE](LICENSE) file.
 
-Make with :heart: by [Marcos Santos](https://github.com/MarcosSantosDev)
+---
+
+Made with :heart: and code by [Marcos Santos](https://github.com/MarcosSantosDev).
+
