@@ -7,10 +7,11 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:jest/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/jsx-runtime",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "react",
@@ -28,10 +29,18 @@
     "sourceType": "module"
   },
   "settings": {
-    "react": {
-      "version": "^18.2.0"
-    }
-  },
+		"react": {
+			// Tells eslint-plugin-react to automatically detect the version of React to use.
+			"version": "detect"
+		},
+		// Tells eslint how to resolve imports
+		"import/resolver": {
+			"node": {
+				"paths": ["src"],
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
+	},
   "rules": {
     "prettier/prettier": "error",
     "no-console": "error",
@@ -53,6 +62,7 @@
           "ignoreCase": true
         }
       }
-    ]
+    ],
+    "react/prop-types": 0
   }
 }

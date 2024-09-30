@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-items: flex-end;
@@ -13,8 +14,11 @@ type FooterContentStyledProps = {
 };
 
 export const FooterContent = styled.div<FooterContentStyledProps>`
-  display: flex;
-  flex-direction: ${({ panelIsOpened }) => (panelIsOpened ? 'row' : 'column')};
+  display: grid;
+  grid-template-columns: ${({ panelIsOpened }) =>
+    panelIsOpened ? '1fr 44px' : '44px'};
+  grid-template-rows: ${({ panelIsOpened }) =>
+    panelIsOpened ? 'auto' : 'auto auto'};
   justify-content: space-between;
   gap: ${({ theme }) => theme.spacing.lg};
 `;
@@ -38,9 +42,9 @@ export const UserContainer = styled.div`
 `;
 
 export const UserInfo = styled.div`
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
+  max-width: 115px;
+  display: flex;
+  flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xs};
 `;
 
@@ -54,4 +58,7 @@ export const UserSubInfo = styled.span`
   font-size: ${({ theme }) => theme.fontSizes.sm};
   font-weight: 400;
   color: ${({ theme }) => theme.colors.text.tertiary};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;

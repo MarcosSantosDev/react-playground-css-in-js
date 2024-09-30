@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --port=3000",
     "build:dev": "tsc && vite build --mode development",
-    "build:prod": "tsc && vite build --mode production",
+    "build:prod": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
     "lint": "eslint ./src",
@@ -18,16 +18,21 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">10"
+    "node": ">=20"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@tanstack/react-query": "^5.56.2",
     "axios": "^1.7.7",
+    "crypto-js": "^4.2.0",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.441.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.53.0",
     "react-router-dom": "^6.3.0",
+    "react-toastify": "^10.0.5",
     "styled-components": "^5.3.6",
     "zod": "^3.23.8",
     "zustand": "^5.0.0-rc.2"
@@ -44,8 +49,11 @@
     "@storybook/builder-vite": "^0.2.4",
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
+    "@tanstack/eslint-plugin-query": "^5.58.1",
+    "@tanstack/react-query-devtools": "^5.58.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^16.0.1",
+    "@types/crypto-js": "^4.2.2",
     "@types/jest": "^29.0.3",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
@@ -67,9 +75,12 @@
     "lint-staged": "^13.0.3",
     "msw": "^2.4.9",
     "prettier": "2.7.1",
+    "rollup-plugin-visualizer": "^5.12.0",
     "ts-jest": "^29.0.1",
+    "ts-jest-mock-import-meta": "^1.2.0",
     "typescript": "^4.6.4",
     "vite": "^3.1.6",
+    "vite-plugin-svgr": "^4.2.0",
     "vite-tsconfig-paths": "^3.5.1"
   },
   "resolutions": {

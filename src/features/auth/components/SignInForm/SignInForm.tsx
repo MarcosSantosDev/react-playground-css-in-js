@@ -1,47 +1,71 @@
-import { Button, Input } from '@/components';
-import { useAuthState } from '@/features/routes/hooks/useAuthState';
-import { useFormSubmit } from '@/hooks/useFormSubmit';
+import { zodResolver } from '@hookform/resolvers/zod';
 
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+
+import { Button, Input } from '@/components';
+
+import { useAuth } from '../../hooks/useAuth';
+import { AuthSignInPayload } from '../../types/auth.types';
 import * as S from './SignInForm.styles';
 
-type SignInFormData = {
-  email: string;
-  password: string;
-};
+const schema = z.object({
+  email: z
+    .string()
+    .min(1, 'Informe seu email.')
+    .email('Informe um email valido'),
+  password: z
+    .string()
+    .min(1, 'Informe sua senha.')
+    .min(4, 'Senha muito curta - deve conter no mínimo 4 letras.'),
+});
 
-const SignInForm = () => {
-  const { login } = useAuthState();
+type SignInFormData = AuthSignInPayload;
 
-  const handleSubmit = useFormSubmit(data => {
-    const formData = data as SignInFormData;
-    login({
-      id: '1',
-      name: 'Ghost',
-      email: formData.email,
-    });
+function SignInForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignInFormData>({
+    mode: 'onSubmit',
+    defaultValues: {
+      email: '',
+      password: '',
+      remember: false,
+    },
+    resolver: zodResolver(schema),
   });
 
+  const { signIn, isLoading } = useAuth();
+
+  const onSubmit = (credentials: SignInFormData) => {
+    signIn(credentials);
+  };
+
   return (
-    <S.Form onSubmit={handleSubmit} autoComplete="off">
+    <S.Form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
       <S.FieldsGroup>
         <Input
+          {...register('email')}
           label="Email"
-          type="email"
-          placeholder="Enter your email"
-          name="email"
+          type="text"
+          placeholder="jon@example.com"
+          error={errors.email}
         />
         <Input
+          {...register('password')}
           label="Password"
           type="password"
           placeholder="Enter your password"
-          name="password"
+          error={errors.password}
         />
       </S.FieldsGroup>
-      <Button type="submit" size="md" align="center">
+      <Button type="submit" size="md" align="center" disabled={isLoading}>
         Sign In
       </Button>
     </S.Form>
   );
-};
+}
 
 export default SignInForm;

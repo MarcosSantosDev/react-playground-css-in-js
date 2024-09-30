@@ -1,14 +1,15 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
+import Suspense from '@/components/Suspense/Suspense';
+import { useAuth } from '@/features/auth/hooks/useAuth';
 import { Sidebar } from '@/features/routes/components';
-import { useAuthState } from '@/features/routes/hooks/useAuthState';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 import paths from '@/router/config/paths';
 
 import * as S from './AppLayout.styles';
 
 function AppAuthLayout() {
-  const { isAuthenticated } = useAuthState();
+  const { isAuthenticated } = useAuth();
   const { panelIsOpened } = usePanelState();
 
   if (isAuthenticated) {
@@ -19,7 +20,9 @@ function AppAuthLayout() {
         </S.SidebarWrapper>
         <S.MainContent panelIsOpened={panelIsOpened}>
           <S.ContentArea>
-            <Outlet />
+            <Suspense>
+              <Outlet />
+            </Suspense>
           </S.ContentArea>
         </S.MainContent>
       </S.Container>

@@ -4,13 +4,13 @@ import { render, RenderOptions } from '@testing-library/react';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import { AppThemeProvider } from '@/styles/AppThemeProvider';
+import ThemeProvider from '@/styles/ThemeProvider';
 
 export const renderWithTheme = async (
   ui: React.ReactNode,
   options?: Omit<RenderOptions, 'queries'>,
 ) => {
-  return render(ui, { ...options, wrapper: AppThemeProvider });
+  return render(ui, { ...options, wrapper: ThemeProvider });
 };
 
 export const renderWithThemeAndBrowserRouter = async (
@@ -20,7 +20,7 @@ export const renderWithThemeAndBrowserRouter = async (
   return act(() => {
     render(<BrowserRouter>{ui}</BrowserRouter>, {
       ...options,
-      wrapper: AppThemeProvider,
+      wrapper: ThemeProvider,
     });
   });
 };

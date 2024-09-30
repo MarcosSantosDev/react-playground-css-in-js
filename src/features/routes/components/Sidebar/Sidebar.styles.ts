@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SidebarContainer = styled.div`
+  max-width: 100%;
   position: relative;
   height: 100%;
   display: grid;

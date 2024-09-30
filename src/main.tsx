@@ -1,13 +1,9 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
 
 import { enableMocking } from './mocks/browser';
-import { Router } from './router';
-import { AppThemeProvider } from './styles/AppThemeProvider';
-
-const helmetContext = {};
+import Router from './router';
 
 const container = document.getElementById('root') as HTMLElement;
 
@@ -20,11 +16,7 @@ const root = ReactDOM.createRoot(container);
 enableMocking().then(() => {
   root.render(
     <React.StrictMode>
-      <HelmetProvider context={helmetContext}>
-        <AppThemeProvider>
-          <Router />
-        </AppThemeProvider>
-      </HelmetProvider>
+      <Router />
     </React.StrictMode>,
   );
 });

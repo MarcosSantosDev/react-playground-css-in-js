@@ -9,6 +9,9 @@ const worker = setupWorker(...handlers);
 export async function enableMocking() {
   if (env.MODE === 'development' && env.VITE_MSW_ACTIVATED === 'true') {
     return worker.start({
+      serviceWorker: {
+        url: '/mockServiceWorker.js',
+      },
       onUnhandledRequest: 'bypass',
     });
   }

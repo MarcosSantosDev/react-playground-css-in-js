@@ -19,6 +19,8 @@ export const Container = styled.div`
 `;
 
 export const SidebarWrapper = styled.div<SidebarProps>`
+  max-width: ${({ panelIsOpened }) =>
+    panelIsOpened ? `${SIDEBAR_WIDTH_OPENED}px` : `${SIDEBAR_WIDTH_CLOSED}px`};
   width: ${({ panelIsOpened }) =>
     panelIsOpened ? `${SIDEBAR_WIDTH_OPENED}px` : `${SIDEBAR_WIDTH_CLOSED}px`};
   transition: width 0.3s ease, background-color 0.3s ease;

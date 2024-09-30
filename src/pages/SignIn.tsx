@@ -1,7 +1,7 @@
 import SEO from '@/components/SEO/SEO';
 import AuthFormWrapper from '@/features/auth/components/AuthFormWrapper';
 import SignInForm from '@/features/auth/components/SignInForm/SignInForm';
-import AuthLayout from '@/features/routes/layouts/AuthLayout/AuthLayout';
+import AuthLayout from '@/layouts/AuthLayout/AuthLayout';
 import paths from '@/router/config/paths';
 
 const SignIn = () => (

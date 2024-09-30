@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 
-import { useAuthState } from '@/features/routes/hooks/useAuthState';
+import { useAuth } from '@/features/auth/hooks/useAuth';
 import paths from '@/router/config/paths';
 
 import * as S from './AuthLayout.styles';
@@ -15,7 +15,7 @@ interface AuthLayoutProps {
 const AuthLayout = ({ children }: AuthLayoutProps) => {
   const location = useLocation();
 
-  const { isAuthenticated } = useAuthState();
+  const { isAuthenticated } = useAuth();
 
   const isSignInPage = location.pathname === paths.ROOT_SIGN_IN;
 

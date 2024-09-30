@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { LinkProps, MemoryRouter } from 'react-router-dom';
 
-import { AppThemeProvider } from '@/styles/AppThemeProvider';
+import ThemeProvider from '@/styles/ThemeProvider';
 
 import StoryWrapper from '../StoryWrapper/StoryWrapper';
 import { CustomLink } from './CustomLink';
@@ -13,9 +13,9 @@ export default {
   decorators: [
     Story => (
       <MemoryRouter>
-        <AppThemeProvider>
+        <ThemeProvider>
           <StoryWrapper>{Story()}</StoryWrapper>
-        </AppThemeProvider>
+        </ThemeProvider>
       </MemoryRouter>
     ),
   ],

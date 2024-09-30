@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const InputContainer = styled.div`
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   row-gap: ${({ theme }) => theme.spacing.xs};
 `;
 
@@ -13,21 +13,39 @@ export const Label = styled.label`
   padding: 0 ${({ theme }) => theme.spacing.xs};
 `;
 
-export const StyledInput = styled.input`
-  width: 100%;
-  padding: ${({ theme }) => theme.spacing.md};
-  border: 1px solid ${({ theme }) => theme.colors.border.secondary};
-  border-radius: ${({ theme }) => theme.borderRadius.sm};
-  outline: none;
-  color: ${({ theme }) => theme.colors.text.primary};
-  background-color: ${({ theme }) => theme.colors.background};
-  font-size: ${({ theme }) => theme.fontSizes.md};
+export const InputField = styled.input<{ hasError: boolean }>`
+  ${({ theme, hasError }) => css`
+    width: 100%;
+    padding: ${theme.spacing.md};
+    border-width: 1px;
+    border-style: solid;
+    border-color: ${hasError
+      ? theme.colors.error
+      : theme.colors.border.secondary};
+    border-radius: ${theme.borderRadius.sm};
+    outline: none;
+    color: ${theme.colors.text.primary};
+    background-color: ${theme.colors.background};
+    font-size: ${theme.fontSizes.md};
 
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.text.primary};
-  }
+    &::placeholder {
+      color: ${theme.colors.text.quaternary};
+    }
 
-  &:focus {
-    border-color: ${({ theme }) => theme.colors.border};
-  }
+    &:focus {
+      outline-width: 1px;
+      outline-style: solid;
+      outline-color: ${hasError
+        ? theme.colors.error
+        : theme.colors.border.secondary};
+    }
+  `}
+`;
+
+export const ErrorMessage = styled.span`
+  ${({ theme }) => css`
+    margin-top: ${theme.spacing.xs};
+    color: ${theme.colors.error};
+    font-size: ${theme.fontSizes.sm};
+  `};
 `;

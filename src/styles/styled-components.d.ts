@@ -14,6 +14,7 @@ declare module 'styled-components' {
         primary: string;
         secondary: string;
         tertiary: string;
+        quaternary: string;
         link: string;
         disabled: string;
       };
@@ -69,12 +70,10 @@ declare module 'styled-components' {
       primary: string;
     };
     breakpoints: {
-      xs: string;
-      sm: string;
-      md: string;
-      lg: string;
-      xl: string;
-      xxl: string;
+      mobile: string;
+      tablet: string;
+      laptop: string;
+      desktop: string;
     };
     borderRadius: {
       sm: string;

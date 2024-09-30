@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { AppThemeProvider } from '@/styles/AppThemeProvider';
+import ThemeProvider from '@/styles/ThemeProvider';
 
 import StoryWrapper from '../StoryWrapper/StoryWrapper';
 import { Button } from './Button';
@@ -11,9 +11,9 @@ export default {
   component: Button,
   decorators: [
     Story => (
-      <AppThemeProvider>
+      <ThemeProvider>
         <StoryWrapper>{Story()}</StoryWrapper>
-      </AppThemeProvider>
+      </ThemeProvider>
     ),
   ],
   args: {

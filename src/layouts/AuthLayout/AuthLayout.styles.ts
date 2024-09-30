@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { laptop } from '@/styles/breakpoints';
 
 export const Container = styled.div`
   display: flex;
@@ -14,16 +16,24 @@ export const ContentColumn = styled.div`
 `;
 
 export const ContentLogoImg = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  place-items: center;
-  flex-direction: column;
-  background: ${({ theme }) => theme.colors.surface};
+  ${({ theme }) => css`
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    flex-direction: column;
+    background: ${theme.colors.surface};
 
-  > img {
-    width: 80%;
-  }
+    > img {
+      width: 80%;
+    }
+
+    ${laptop({
+      style: css`
+        display: none;
+      `,
+    })}
+  `}
 `;
 
 interface ImageColumnProps {

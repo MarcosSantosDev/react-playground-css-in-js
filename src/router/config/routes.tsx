@@ -1,16 +1,19 @@
-import { NotFound } from '@/features/routes/components';
-import AppAuthLayout from '@/features/routes/layouts/AppLayout/AppLayout';
-// Pages
-import SignIn from '@/pages/SignIn';
-import SignUp from '@/pages/SignUp';
+import * as React from 'react';
+
+import { ErrorBoundary } from '@/features/routes/components';
+import AppAuthLayout from '@/layouts/AppLayout/AppLayout';
 
 import { appRoutesConfig } from './app.routes';
 import paths from './paths';
 import { RouteObject } from './route.types';
 
+// Pages
+const SignIn = React.lazy(() => import('@/pages/SignIn'));
+const SignUp = React.lazy(() => import('@/pages/SignUp'));
+
 export const routes: RouteObject[] = [
   {
-    errorElement: <NotFound />,
+    errorElement: <ErrorBoundary />,
     id: 'ROOT',
     path: paths.ROOT,
     element: <AppAuthLayout />,

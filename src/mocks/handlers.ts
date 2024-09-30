@@ -1,3 +1,3 @@
-// import { handlers as authenticationHandlers } from '@root/app/features/authentication/api/mocks/handlers';
+import { authHandlers } from '@/features/auth/services/mocks/auth.handlers';
 
-export const handlers = [];
+export const handlers = [...authHandlers];

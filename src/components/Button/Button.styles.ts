@@ -62,6 +62,10 @@ export const Button = styled.button<ButtonStyledProps>`
   cursor: pointer;
   transition: ${({ theme }) => theme.transitions.default};
 
+  &:focus {
+    outline-width: 1px;
+  }
+
   &:hover {
     filter: opacity(0.8);
     border-color: ${({ theme }) => {
