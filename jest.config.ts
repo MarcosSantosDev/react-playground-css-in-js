@@ -3,7 +3,9 @@
  * https://jestjs.io/docs/configuration
  */
 
-const Configuration = {
+import type { JestConfigWithTsJest } from 'ts-jest';
+
+const Configuration: JestConfigWithTsJest = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -71,28 +73,15 @@ const Configuration = {
   // maxWorkers: "50%",
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    "node_modules"
-  ],
+  moduleDirectories: ['node_modules'],
 
   // An array of file extensions your modules use
-  // moduleFileExtensions: [
-  //   "js",
-  //   "mjs",
-  //   "cjs",
-  //   "jsx",
-  //   "ts",
-  //   "tsx",
-  //   "json",
-  //   "node"
-  // ],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
-    '@/tests/(.*)': '<rootDir>/__tests__/$1',
   },
-
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
 
@@ -129,17 +118,17 @@ const Configuration = {
   // A list of paths to directories that Jest should use to search for files in
   roots: [
     // "<rootDir>/__tests__/",
-    "<rootDir>/src/"
+    '<rootDir>/src/',
   ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: ['<rootDir>/jest.setup.ts'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -163,9 +152,7 @@ const Configuration = {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  // testPathIgnorePatterns: ['/node_modules/'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -179,10 +166,10 @@ const Configuration = {
   // A map from regular expressions to paths to transformers
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
-    "^.+\\.(js|jsx)$": "babel-jest",
+    '^.+\\.(js|jsx)$': 'babel-jest',
   },
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: [ "node_modules/(?!(lucide-react)/)" ],
+  transformIgnorePatterns: ['node_modules/(?!(lucide-react)/)'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
@@ -195,6 +182,8 @@ const Configuration = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+
+  passWithNoTests: true,
 };
 
 export default Configuration;

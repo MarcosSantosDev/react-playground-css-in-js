@@ -11,4 +11,4 @@ const envSchema = z.object({
   VITE_MSW_DELAY_MS: z.string(),
 });
 
-export const env = envSchema.parse(import.meta.env);
+export const env = envSchema.parse(process.env);

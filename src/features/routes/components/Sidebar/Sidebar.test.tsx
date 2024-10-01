@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import paths from '@/router/config/paths';
-import { renderWithThemeAndBrowserRouter } from '@/utils/RTL';
+import { renderWithRTQAndBrowserRouter } from '@/utils/RTL';
 
 import Sidebar from './Sidebar';
 
@@ -16,7 +16,7 @@ jest.mock('react-router-dom', () => ({
 describe('Sidebar component', () => {
   it('should render correctly', async () => {
     // arrange
-    await renderWithThemeAndBrowserRouter(<Sidebar />);
+    await renderWithRTQAndBrowserRouter(<Sidebar />);
     // assert
     const navElement = screen.getByText('Dashboard');
     expect(navElement).toBeInTheDocument();
@@ -24,7 +24,7 @@ describe('Sidebar component', () => {
 
   it('should be call navigate when click the nav item "Dashboard"', async () => {
     // arrange
-    await renderWithThemeAndBrowserRouter(<Sidebar />);
+    await renderWithRTQAndBrowserRouter(<Sidebar />);
     // act
     const navElement = screen.getByText('Dashboard');
     userEvent.click(navElement);
