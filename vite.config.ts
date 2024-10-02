@@ -3,7 +3,6 @@ import vitePluginReact from '@vitejs/plugin-react';
 import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig, loadEnv } from 'vite';
-import vitePluginEnvironment from 'vite-plugin-environment';
 import vitePluginSvgr from 'vite-plugin-svgr';
 import vitePluginTsconfigPaths from 'vite-tsconfig-paths';
 
@@ -42,7 +41,6 @@ export default defineConfig(({ mode }) => {
         brotliSize: true,
         filename: 'analyse/index.html',
       }),
-      vitePluginEnvironment('all'),
     ],
     define: {
       global: 'window',

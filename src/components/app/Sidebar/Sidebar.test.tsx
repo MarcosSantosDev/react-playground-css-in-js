@@ -1,17 +1,22 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import paths from '@/router/config/paths';
 import { renderWithRTQAndBrowserRouter } from '@/utils/RTL';
 
 import Sidebar from './Sidebar';
 
-const mockNavigate = jest.fn();
+const mockNavigate = vi.fn();
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
+vi.mock('react-router-dom', async () => {
+  const RRD = await vi.importActual('react-router-dom');
+  return {
+    ...RRD,
+    useNavigate: () => mockNavigate,
+  };
+});
 
 describe('Sidebar component', () => {
   it('should render correctly', async () => {

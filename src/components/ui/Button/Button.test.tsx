@@ -1,6 +1,9 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+// import { expect } from 'vitest';
+
 import { renderWithTheme } from '@/utils/RTL';
 
 import { Button } from './Button';
@@ -19,7 +22,7 @@ describe('Button Component', () => {
   });
 
   it('should call onClick function when clicked', async () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
 
     renderWithTheme(
       <Button
