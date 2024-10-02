@@ -1,4 +1,4 @@
-import { Icon, IconButton } from '@/components';
+import { Icon, IconButton } from '@/components/ui';
 import { useAuth } from '@/features/auth/hooks/useAuth';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 

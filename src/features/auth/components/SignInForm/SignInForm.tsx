@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { Button, Input } from '@/components';
+import { Button, Input } from '@/components/ui';
 
 import { useAuth } from '../../hooks/useAuth';
 import { AuthSignInPayload } from '../../types/auth.types';

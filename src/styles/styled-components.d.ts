@@ -28,7 +28,11 @@ declare module 'styled-components' {
         secondary: string;
         disabled: string;
       };
-      error: string;
+      error: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+      };
       success: string;
       warning: string;
     };

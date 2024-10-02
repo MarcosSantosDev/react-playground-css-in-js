@@ -1,4 +1,4 @@
-import { Icon, IconButton } from '@/components';
+import { Icon, IconButton } from '@/components/ui';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 
 import * as S from './Header.styles';
@@ -8,7 +8,9 @@ const Header = () => {
 
   return (
     <S.Header>
-      {panelIsOpened && <img src="assets/app/playground-logo.png" alt="Logo" />}
+      {panelIsOpened && (
+        <img src="assets/images/logos/playground-logo.png" alt="Logo" />
+      )}
       <IconButton onClick={togglePanel}>
         <Icon
           name={panelIsOpened ? 'panel-left-close' : 'panel-left-open'}

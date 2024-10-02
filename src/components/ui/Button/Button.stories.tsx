@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { StoryWrapper } from '@/components/app';
 import ThemeProvider from '@/styles/ThemeProvider';
 
-import StoryWrapper from '../StoryWrapper/StoryWrapper';
 import { Button } from './Button';
 import type { ButtonProps } from './Button';
 
@@ -44,7 +44,7 @@ export default {
       defaultValue: 'primary',
       description: 'Property to control button variation',
       control: 'inline-radio',
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'error'],
     },
     size: {
       type: 'string',

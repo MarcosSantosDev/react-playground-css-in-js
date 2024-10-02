@@ -5,8 +5,8 @@ import paths from '@/router/config/paths';
 
 import * as S from './AuthLayout.styles';
 
-import authBgLogoSignIn from '/assets/auth/sign-in.svg';
-import authBgLogoSignUp from '/assets/auth/sign-up.svg';
+import authBgLogoSignIn from '/assets/images/backgrounds/sign-in.svg';
+import authBgLogoSignUp from '/assets/images/backgrounds/sign-up.svg';
 
 interface AuthLayoutProps {
   children: React.ReactNode;

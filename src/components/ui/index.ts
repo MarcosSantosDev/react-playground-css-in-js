@@ -3,4 +3,3 @@ export * from './Input/Input';
 export * from './CustomLink/CustomLink';
 export * from './Icon/Icon';
 export * from './IconButton/IconButton';
-export * from './SEO/SEO';

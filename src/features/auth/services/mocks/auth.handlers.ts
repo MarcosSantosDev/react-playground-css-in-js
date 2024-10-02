@@ -4,7 +4,7 @@ import type {
   AuthSignInPayload,
   AuthSignInReturn,
 } from '@/features/auth/types/auth.types';
-import { unauthorizedError } from '@/mocks/errorFactories';
+import { unauthorizedError } from '@/libs/msw/errorResponseFactories';
 
 import { defaultUserAuthenticatedData, defaultAuthData } from './auth.fixtures';
 import { generateJWTToken } from './auth.functions';

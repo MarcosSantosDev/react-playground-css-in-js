@@ -2,9 +2,9 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { LinkProps, MemoryRouter } from 'react-router-dom';
 
+import { StoryWrapper } from '@/components/app';
 import ThemeProvider from '@/styles/ThemeProvider';
 
-import StoryWrapper from '../StoryWrapper/StoryWrapper';
 import { CustomLink } from './CustomLink';
 
 export default {

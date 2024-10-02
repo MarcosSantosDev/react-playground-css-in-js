@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { Icon } from '@/components';
+import { Icon } from '@/components/ui';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 import { appRoutesNavigation } from '@/router/config/app.routes';
 

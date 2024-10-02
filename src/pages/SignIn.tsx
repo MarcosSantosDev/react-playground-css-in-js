@@ -1,4 +1,4 @@
-import SEO from '@/components/SEO/SEO';
+import { SEO } from '@/components/app';
 import AuthFormWrapper from '@/features/auth/components/AuthFormWrapper';
 import SignInForm from '@/features/auth/components/SignInForm/SignInForm';
 import AuthLayout from '@/layouts/AuthLayout/AuthLayout';
@@ -15,7 +15,7 @@ const SignIn = () => (
     />
     <AuthFormWrapper
       title="Welcome back!"
-      subTitleDecription="Don't have an account ?"
+      subTitleDescription="Don't have an account ?"
       subTitleLink={{
         text: 'Sign Up',
         to: paths.ROOT_SIGN_UP,

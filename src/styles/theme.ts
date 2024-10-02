@@ -27,7 +27,11 @@ export const theme: DefaultTheme = {
       secondary: '#CDCDCD',
       disabled: '#F1F4FF',
     },
-    error: '#D32F2F',
+    error: {
+      primary: '#721c24',
+      secondary: '#D32F2F',
+      tertiary: '#f5c6cb',
+    },
     success: '#388E3C',
     warning: '#FBC02D',
   },

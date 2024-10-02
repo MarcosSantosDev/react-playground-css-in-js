@@ -4,10 +4,10 @@ import {
   useRouteError,
 } from 'react-router-dom';
 
-import { Button } from '@/components';
+import { Button } from '@/components/ui';
 import paths from '@/router/config/paths';
 
-import * as S from './ErrorBoundary.styles';
+import * as S from './RouteErrorElement.styles';
 
 type ErrorContentProps = {
   title: string;
@@ -34,7 +34,7 @@ const ErrorContent = ({
   </S.Container>
 );
 
-const ErrorBoundary = () => {
+const RouteErrorElement = () => {
   const navigate = useNavigate();
   const error = useRouteError();
 
@@ -56,13 +56,7 @@ const ErrorBoundary = () => {
     );
   }
 
-  return (
-    <ErrorContent
-      title="Ops!"
-      subtitle="Ocorreu um erro inesperado, desculpe o transtorno"
-      onGoToHomePage={handleGoToHomePage}
-    />
-  );
+  throw error;
 };
 
-export default ErrorBoundary;
+export default RouteErrorElement;

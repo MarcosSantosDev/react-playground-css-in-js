@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CustomLink } from '@/components';
+import { CustomLink } from '@/components/ui';
 
 import OAuth from '../OAuth';
 import * as S from './AuthFormWrapper.styles';
@@ -8,7 +8,7 @@ import * as S from './AuthFormWrapper.styles';
 type AuthFormWrapperProps = {
   children?: React.ReactNode;
   title: string;
-  subTitleDecription?: string;
+  subTitleDescription?: string;
   subTitleLink?: {
     text: string;
     to: string;
@@ -18,7 +18,7 @@ type AuthFormWrapperProps = {
 const AuthFormWrapper = ({
   children,
   title,
-  subTitleDecription,
+  subTitleDescription,
   subTitleLink,
 }: AuthFormWrapperProps) => {
   return (
@@ -26,7 +26,7 @@ const AuthFormWrapper = ({
       <S.HeaderWrapper>
         <S.HeaderTitle>{title}</S.HeaderTitle>
         <S.HeaderContentSubTitle>
-          <S.HeaderDescription>{subTitleDecription}</S.HeaderDescription>
+          <S.HeaderDescription>{subTitleDescription}</S.HeaderDescription>
           {subTitleLink && (
             <CustomLink to={subTitleLink.to}>{subTitleLink.text}</CustomLink>
           )}

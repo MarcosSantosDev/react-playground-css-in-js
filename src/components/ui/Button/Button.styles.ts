@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export type ButtonStyledProps =
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
     align?: 'left' | 'center' | 'right' | 'space-between';
-    variant?: 'primary' | 'secondary';
+    variant?: 'primary' | 'secondary' | 'error';
     size?: 'sm' | 'md' | 'lg';
   };
 
@@ -18,6 +18,8 @@ export const Button = styled.button<ButtonStyledProps>`
     switch (variant) {
       case 'secondary':
         return theme.colors.button.secondary;
+      case 'error':
+        return theme.colors.error.tertiary;
       default:
         return theme.colors.button.primary;
     }
@@ -26,6 +28,8 @@ export const Button = styled.button<ButtonStyledProps>`
     switch (variant) {
       case 'secondary':
         return theme.colors.text.primary;
+      case 'error':
+        return theme.colors.error.primary;
       default:
         return theme.colors.text.secondary;
     }

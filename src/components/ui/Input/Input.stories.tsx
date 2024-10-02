@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { StoryWrapper } from '@/components/app';
 import ThemeProvider from '@/styles/ThemeProvider';
 
-import StoryWrapper from '../StoryWrapper/StoryWrapper';
 import { Input, InputProps } from './Input';
 
 export default {

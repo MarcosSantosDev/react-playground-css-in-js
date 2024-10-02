@@ -2,7 +2,8 @@ import React from 'react';
 
 import ReactDOM from 'react-dom/client';
 
-import { enableMocking } from './mocks/browser';
+import { enableMocking } from '@/libs/msw/browser';
+
 import Router from './router';
 
 const container = document.getElementById('root') as HTMLElement;

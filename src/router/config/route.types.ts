@@ -1,6 +1,6 @@
 import type { RouteObject } from 'react-router-dom';
 
-import type { IconNames } from '@/components/Icon/Icon';
+import type { IconNames } from '@/components/ui/Icon/Icon';
 
 type AppNavigationRouteObject = RouteObject & {
   navigationIcon?: IconNames;

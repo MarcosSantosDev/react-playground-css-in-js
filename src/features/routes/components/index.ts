@@ -1,2 +1,1 @@
-export { default as ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
-export { default as Sidebar } from './Sidebar/Sidebar';
+export { default as RouteErrorElement } from './RouteErrorElement/RouteErrorElement';

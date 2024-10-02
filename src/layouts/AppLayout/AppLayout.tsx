@@ -1,8 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-import Suspense from '@/components/Suspense/Suspense';
+import { Suspense, Sidebar } from '@/components/app';
 import { useAuth } from '@/features/auth/hooks/useAuth';
-import { Sidebar } from '@/features/routes/components';
 import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 import paths from '@/router/config/paths';
 
