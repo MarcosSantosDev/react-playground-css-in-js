@@ -43,8 +43,9 @@ The project leverages the following technologies:
 - [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that compiles to plain JavaScript.
 - [Styled Components](https://styled-components.com/): Use tagged template literals to style your React components.
 - [Zustand](https://github.com/pmndrs/zustand): A small, fast, and scalable state management library for React.
-- [Vite](https://vitejs.dev/): A fast build tool and development server for modern web projects.
 - [Axios](https://axios-http.com/): Promise-based HTTP client for the browser and Node.js.
+- [Vite](https://vitejs.dev/): A fast build tool and development server for modern web projects.
+- [Vitest](https://vitest.dev/): A Vite-native testing framework.
 - [Jest](https://jestjs.io/): A delightful JavaScript testing framework with a focus on simplicity.
 - [Testing Library](https://testing-library.com/): Simple and complete testing utilities for React components.
 - [Storybook](https://storybook.js.org/): Tool for developing UI components in isolation.
