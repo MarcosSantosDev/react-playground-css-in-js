@@ -1,11 +1,11 @@
 import { SEO } from '@/components/app';
 import AuthFormWrapper from '@/features/auth/components/AuthFormWrapper';
 import SignUpForm from '@/features/auth/components/SignUpForm/SignUpForm';
-import AuthLayout from '@/layouts/AuthLayout/AuthLayout';
-import paths from '@/router/config/paths';
+import PublicLayout from '@/layouts/PublicLayout/PublicLayout';
+import routePaths from '@/router/config/routePaths';
 
 const SignUp = () => (
-  <AuthLayout>
+  <PublicLayout>
     <SEO
       resource={{
         title: 'Crie sua Conta na [Nome do Site] | Cadastro Fácil e Rápido',
@@ -18,12 +18,12 @@ const SignUp = () => (
       subTitleDescription="Already have an account ?"
       subTitleLink={{
         text: 'Sign In',
-        to: paths.ROOT_SIGN_IN,
+        to: routePaths.ROOT_SIGN_IN,
       }}
     >
       <SignUpForm />
     </AuthFormWrapper>
-  </AuthLayout>
+  </PublicLayout>
 );
 
 export default SignUp;

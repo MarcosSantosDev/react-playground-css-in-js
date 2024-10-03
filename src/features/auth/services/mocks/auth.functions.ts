@@ -7,7 +7,7 @@ import { defaultUserAuthenticatedData } from './auth.fixtures';
 
 const jwtSecret = 'some-secret-code-goes-here';
 
-function base64url(source: CryptoJS.lib.WordArray) {
+const base64url = (source: CryptoJS.lib.WordArray) => {
   // Encode in classical base64
   let encodedSource = Base64.stringify(source);
 
@@ -20,9 +20,9 @@ function base64url(source: CryptoJS.lib.WordArray) {
 
   // Return the base64 encoded string
   return encodedSource;
-}
+};
 
-export function generateJWTToken(tokenPayload: { [key: string]: unknown }) {
+export const generateJWTToken = (tokenPayload: { [key: string]: unknown }) => {
   // Define token header
   const header = {
     alg: 'HS256',
@@ -61,9 +61,9 @@ export function generateJWTToken(tokenPayload: { [key: string]: unknown }) {
 
   // Build and return the token
   return `${encodedHeader}.${encodedPayload}.${signature}`;
-}
+};
 
-export function verifyJWTToken(token: string) {
+export const verifyJWTToken = (token: string) => {
   // Split the token into parts
   const parts = token.split('.');
   const header = parts[0];
@@ -77,7 +77,7 @@ export function verifyJWTToken(token: string) {
 
   // Verify that the resulting signature is valid
   return signature === signatureCheck;
-}
+};
 
 type GenerateAccessTokenParams = {
   authHeader?: string;
@@ -87,9 +87,9 @@ type GenerateAccessTokenReturn = {
   accessToken: string;
 };
 
-export function generateAccessToken({
+export const generateAccessToken = ({
   authHeader,
-}: GenerateAccessTokenParams): GenerateAccessTokenReturn | null {
+}: GenerateAccessTokenParams): GenerateAccessTokenReturn | null => {
   if (!authHeader) {
     return null;
   }
@@ -110,4 +110,4 @@ export function generateAccessToken({
   }
 
   return null;
-}
+};

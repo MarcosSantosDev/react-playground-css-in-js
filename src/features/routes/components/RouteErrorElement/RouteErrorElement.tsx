@@ -4,51 +4,27 @@ import {
   useRouteError,
 } from 'react-router-dom';
 
-import { Button } from '@/components/ui';
-import paths from '@/router/config/paths';
+import routePaths from '@/router/config/routePaths';
 
-import * as S from './RouteErrorElement.styles';
+import RouteErrorElementFallback from './RouteErrorElementFallback';
 
-type ErrorContentProps = {
-  title: string;
-  subtitle: string;
-  onGoToHomePage: () => void;
-};
-
-const ErrorContent = ({
-  title,
-  subtitle,
-  onGoToHomePage,
-}: ErrorContentProps) => (
-  <S.Container>
-    <S.Title>{title}</S.Title>
-    <S.Subtitle>{subtitle}</S.Subtitle>
-    <Button
-      type="button"
-      variant="primary"
-      icon={{ align: 'left', name: 'link' }}
-      onClick={onGoToHomePage}
-    >
-      Voltar para página principal
-    </Button>
-  </S.Container>
-);
+const notFoundMessage =
+  'Desculpe, não conseguimos encontrar a página que você tentou acessar';
 
 const RouteErrorElement = () => {
   const navigate = useNavigate();
   const error = useRouteError();
 
   const handleGoToHomePage = () => {
-    navigate(paths.ROOT);
+    navigate(routePaths.ROOT);
   };
 
   if (isRouteErrorResponse(error)) {
     const title = error.status.toString();
-    const subtitle =
-      error.status === 404 ? 'Página não encontrada' : error.statusText;
+    const subtitle = error.status === 404 ? notFoundMessage : error.statusText;
 
     return (
-      <ErrorContent
+      <RouteErrorElementFallback
         title={title}
         subtitle={subtitle}
         onGoToHomePage={handleGoToHomePage}

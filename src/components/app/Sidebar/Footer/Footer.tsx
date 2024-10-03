@@ -4,7 +4,7 @@ import { usePanelState } from '@/features/routes/hooks/useSidebarPanelState';
 
 import * as S from './Footer.styles';
 
-function Footer() {
+const Footer = () => {
   const { logout, user } = useAuth();
   const { panelIsOpened } = usePanelState();
 
@@ -30,6 +30,6 @@ function Footer() {
       </S.FooterContent>
     </S.FooterContainer>
   );
-}
+};
 
 export default Footer;

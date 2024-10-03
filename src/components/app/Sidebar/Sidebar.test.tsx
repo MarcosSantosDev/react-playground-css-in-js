@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { vi } from 'vitest';
 
-import paths from '@/router/config/paths';
+import routePaths from '@/router/config/routePaths';
 import { renderWithRTQAndBrowserRouter } from '@/utils/RTL';
 
 import Sidebar from './Sidebar';
@@ -36,6 +36,6 @@ describe('Sidebar component', () => {
     // assert
     expect(mockNavigate).toHaveBeenCalled();
     expect(mockNavigate).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenCalledWith(paths.ROOT_INDEX);
+    expect(mockNavigate).toHaveBeenCalledWith(routePaths.ROOT);
   });
 });

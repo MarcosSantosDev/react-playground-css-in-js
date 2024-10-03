@@ -2,10 +2,8 @@ import type { RouteObject } from 'react-router-dom';
 
 import type { IconNames } from '@/components/ui/Icon/Icon';
 
-type AppNavigationRouteObject = RouteObject & {
+export type NavigationRouteObject = RouteObject & {
   navigationIcon?: IconNames;
   navigationTitle?: string;
-  children?: AppNavigationRouteObject[];
+  children?: NavigationRouteObject[];
 };
-
-export type { RouteObject, AppNavigationRouteObject };

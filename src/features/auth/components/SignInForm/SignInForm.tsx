@@ -22,7 +22,7 @@ const schema = z.object({
 
 type SignInFormData = AuthSignInPayload;
 
-function SignInForm() {
+const SignInForm = () => {
   const {
     register,
     handleSubmit,
@@ -66,6 +66,6 @@ function SignInForm() {
       </Button>
     </S.Form>
   );
-}
+};
 
 export default SignInForm;

@@ -1,15 +1,28 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 import { laptop } from '@/styles/breakpoints';
 
-export const Container = styled.div`
-  display: flex;
-  height: 100vh;
+export const ContainerLayout = styled.div`
   width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+`;
+
+export const Container = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 export const ContentColumn = styled.div`
-  flex: 1;
+  width: 50%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,12 +30,13 @@ export const ContentColumn = styled.div`
 
 export const ContentLogoImg = styled.div`
   ${({ theme }) => css`
-    flex: 1;
     display: flex;
     justify-content: center;
     place-items: center;
     flex-direction: column;
     background: ${theme.colors.surface};
+    width: 50%;
+    height: 100%;
 
     > img {
       width: 80%;

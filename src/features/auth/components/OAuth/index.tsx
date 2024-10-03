@@ -7,10 +7,6 @@ const OAuth = () => {
     // Lógica de login com Google
   };
 
-  const onAppleLogin = () => {
-    // Lógica de login com Apple
-  };
-
   return (
     <S.Container>
       <S.ConditionWrapper>
@@ -28,16 +24,6 @@ const OAuth = () => {
           }}
         >
           Continue with Google
-        </Button>
-        <Button
-          variant="secondary"
-          onClick={onAppleLogin}
-          icon={{
-            align: 'left',
-            name: 'apple',
-          }}
-        >
-          Continue with Apple
         </Button>
       </S.OAuthWrapper>
     </S.Container>

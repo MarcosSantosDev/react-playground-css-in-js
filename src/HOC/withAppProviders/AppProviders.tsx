@@ -12,9 +12,9 @@ import ThemeProvider from '@/styles/ThemeProvider';
 const AppProviders = ({ children }: React.PropsWithChildren) => {
   return (
     <ErrorBoundary>
-      <Suspense>
-        <HelmetProvider>
-          <ThemeProvider>
+      <ThemeProvider>
+        <Suspense>
+          <HelmetProvider>
             <ErrorBoundary>
               <QueryClientProvider client={queryClient}>
                 <ToastContainer />
@@ -22,9 +22,9 @@ const AppProviders = ({ children }: React.PropsWithChildren) => {
                 <ReactQueryDevtools initialIsOpen={false} />
               </QueryClientProvider>
             </ErrorBoundary>
-          </ThemeProvider>
-        </HelmetProvider>
-      </Suspense>
+          </HelmetProvider>
+        </Suspense>
+      </ThemeProvider>
     </ErrorBoundary>
   );
 };
